@@ -19,7 +19,7 @@ namespace AccessibilityGuard;
 /// After a correct passcode, Settings stays unlocked until you leave the Settings
 /// app or the screen turns off.
 /// </summary>
-[Service(Name = "com.example.accessibilityguard.GuardService",
+[Service(Name = "com.lekkersolutions.accessibilityguard.GuardService",
          Label = "@string/service_label",
          Permission = "android.permission.BIND_ACCESSIBILITY_SERVICE",
          Exported = true)]

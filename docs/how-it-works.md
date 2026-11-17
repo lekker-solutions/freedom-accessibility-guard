@@ -37,4 +37,3 @@ The passcode is 4–8 digits, stored only as a salted PBKDF2 hash. After 5 wrong
 - **No foreground service.** The accessibility framework rebinds the service after a reboot or a low-memory kill. Aggressive OEM battery managers could still kill it.
 - **Safe Mode** disables third-party accessibility services. See [Tamper protection](tamper-protection.md) for the other remaining gaps.
 - `QUERY_ALL_PACKAGES` is declared so a user-chosen protected app's name resolves. If you only ever protect Freedom, the `<queries>` entry is enough.
-- `applicationId` is still `com.example.accessibilityguard`, and release signing isn't set up.

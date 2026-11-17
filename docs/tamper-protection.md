@@ -22,7 +22,7 @@ As device owner, Android disables Force stop and Uninstall outright.
 Provisioning works only when **no accounts at all** are on the device. That includes accounts added by third-party apps (WhatsApp, Signal, Microsoft Authenticator, OneDrive, and so on), not just Google and Samsung. Temporarily disabling those apps doesn't hide their accounts. In practice this means a freshly reset phone.
 
 ```bash
-adb shell dpm set-device-owner com.example.accessibilityguard/.GuardAdminReceiver
+adb shell dpm set-device-owner com.lekkersolutions.accessibilityguard/.GuardAdminReceiver
 ```
 
 ## Removing it
@@ -30,8 +30,8 @@ adb shell dpm set-device-owner com.example.accessibilityguard/.GuardAdminReceive
 - **In the app:** tap **Remove tamper protection** and enter the passcode. This works for both levels.
 - **Over USB**, if the passcode is lost:
   ```bash
-  adb shell dpm remove-active-admin com.example.accessibilityguard/.GuardAdminReceiver
-  adb uninstall com.example.accessibilityguard
+  adb shell dpm remove-active-admin com.lekkersolutions.accessibilityguard/.GuardAdminReceiver
+  adb uninstall com.lekkersolutions.accessibilityguard
   ```
 
 Keep the adb route as a backstop. The code never sets `DISALLOW_DEBUGGING_FEATURES`. Don't add it, or recovering would need a factory reset.

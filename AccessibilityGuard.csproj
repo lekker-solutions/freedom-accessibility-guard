@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>AccessibilityGuard</RootNamespace>
-    <ApplicationId>com.example.accessibilityguard</ApplicationId>
+    <ApplicationId>com.lekkersolutions.accessibilityguard</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>

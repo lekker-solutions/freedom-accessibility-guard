@@ -4,15 +4,11 @@ A commitment device for Android. It locks the Settings screens that could switch
 
 ## Install it on your phone
 
-There's no prebuilt APK yet, so you build it from source and install it over USB.
+1. On your phone, open the [latest release](https://github.com/lekker-solutions/freedom-accessibility-guard/releases/latest) and download `AccessibilityGuard-<version>.apk`.
+2. Open the downloaded file. If Android asks, allow your browser or Files app to install unknown apps.
+3. If Play Protect warns about a harmful app, choose to install anyway. It flags any app that uses an accessibility service and device admin; see [Building](docs/building.md#antivirus-false-positives).
 
-1. **On your computer**, install the .NET 10 SDK and a JDK 17, then follow [Building](docs/building.md) to set up the Android tools (one time).
-2. **On your phone**, turn on USB debugging: *Settings → About phone → Software information*, tap *Build number* 7 times, then *Developer options → USB debugging*. Connect the phone and accept the "Allow USB debugging?" prompt.
-3. **Build and install:**
-   ```powershell
-   dotnet build -t:Run -f net10.0-android "-p:AndroidSdkDirectory=$env:LOCALAPPDATA\Android\Sdk" "-p:JavaSdkDirectory=$env:JAVA_HOME"
-   ```
-   If Play Protect warns about a harmful app, choose to install anyway. See [Building](docs/building.md#antivirus-false-positives) for why.
+Updates install over the top in the same way, and your passcode is kept. To build it yourself instead, see [Building](docs/building.md).
 
 ## Set it up
 

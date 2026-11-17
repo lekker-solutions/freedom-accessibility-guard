@@ -9,7 +9,7 @@ namespace AccessibilityGuard;
 /// owner over adb, Android disables its Force stop and Uninstall buttons in
 /// Settings, so the only way to remove it is adb (or a factory reset).
 /// </summary>
-[BroadcastReceiver(Name = "com.example.accessibilityguard.GuardAdminReceiver",
+[BroadcastReceiver(Name = "com.lekkersolutions.accessibilityguard.GuardAdminReceiver",
     Permission = "android.permission.BIND_DEVICE_ADMIN", Exported = true)]
 [MetaData("android.app.device_admin", Resource = "@xml/device_admin")]
 [IntentFilter(new[] { "android.app.action.DEVICE_ADMIN_ENABLED" })]
