@@ -199,7 +199,7 @@ public class GuardService : AccessibilityService
         }
         finally
         {
-            root.Recycle();
+            Release(root);
         }
     }
 
@@ -222,7 +222,7 @@ public class GuardService : AccessibilityService
         }
         finally
         {
-            root.Recycle();
+            Release(root);
         }
     }
 
@@ -237,12 +237,18 @@ public class GuardService : AccessibilityService
         {
             var child = node.GetChild(i);
             bool found = NodeHasText(child, isMatch, depth + 1);
-            child?.Recycle();
+            Release(child);
             if (found) return true;
         }
         return false;
 
         bool Matches(string? value) => value is not null && isMatch(value.Trim());
+    }
+
+    // Recycle() is a no-op (and obsolete) on API 33+; still needed below that.
+    static void Release(AccessibilityNodeInfo? node)
+    {
+        if (node is not null && !OperatingSystem.IsAndroidVersionAtLeast(33)) node.Recycle();
     }
 
     void EnsureProtectedApp()
@@ -324,7 +330,7 @@ public class GuardService : AccessibilityService
             if (_overlay is null) return;
             var root = RootInActiveWindow;
             string? pkg = root?.PackageName;
-            root?.Recycle();
+            Release(root);
             if (pkg is not null && SettingsPackages.Contains(pkg) && !IsProtectedScreen(pkg, null, includeEventText: false))
             {
                 _onProtectedScreen = false;

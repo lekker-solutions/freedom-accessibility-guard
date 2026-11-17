@@ -170,7 +170,10 @@ public class MainActivity : Activity
                 // Lift the uninstall block, then drop device-owner. Clearing owner also
                 // wipes its policies, but we unblock first so nothing is left dangling.
                 dpm.SetUninstallBlocked(GuardAdminReceiver.Component(this), PackageName!, false);
+                // Obsolete since API 26 with no replacement, but still the only way to drop our own device-owner status.
+#pragma warning disable CA1422
                 dpm.ClearDeviceOwnerApp(PackageName!);
+#pragma warning restore CA1422
             }
             else
             {
