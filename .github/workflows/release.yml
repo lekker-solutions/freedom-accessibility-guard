@@ -17,14 +17,14 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '17'
 
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '10.0.x'
 
@@ -63,7 +63,7 @@ jobs:
       - name: Name the APK
         run: cp bin/Release/net10.0-android/publish/com.lekkersolutions.accessibilityguard-Signed.apk "AccessibilityGuard-${{ steps.ver.outputs.version }}.apk"
 
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.ver.outputs.tag }}
           name: Accessibility Guard ${{ steps.ver.outputs.version }}
