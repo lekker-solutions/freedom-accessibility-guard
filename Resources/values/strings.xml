@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Accessibility Guard</string>
+  <string name="service_label">Accessibility Guard</string>
+  <string name="service_description">Locks the Accessibility section of Settings behind a passcode, so accessibility services (including this one) can\'t be changed or turned off without it.</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <!-- Lets the service read the Settings app's own (localized) "Accessibility" title on Android 11+. -->
+  <queries>
+    <package android:name="com.android.settings" />
+    <package android:name="to.freedom.android2" />
+  </queries>
+
+  <!-- Needed to resolve the protected app's name when it's user-configurable (Android 11+). -->
+  <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+  <application
+      android:label="@string/app_name"
+      android:allowBackup="false"
+      android:supportsRtl="true" />
+
+</manifest>
